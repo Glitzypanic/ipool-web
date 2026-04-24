@@ -45,7 +45,7 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
               key={item.id}
               type="button"
               onClick={() => setActiveBenefit(item)}
-              className={`group relative overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white p-4 text-left shadow-[0_24px_80px_-64px_rgba(75,133,226,0.42)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:rounded-[1.5rem] sm:p-5 ${sizeClass}`}
+              className={`group relative overflow-hidden rounded-[1.25rem] border border-[#d5e4f7] bg-[#f3f8ff] p-4 text-left shadow-[0_24px_80px_-64px_rgba(75,133,226,0.42)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 hover:bg-[#eef5ff] focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:rounded-[1.5rem] sm:p-5 ${sizeClass}`}
               variants={{
                 hidden: { opacity: 0, y: 26 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.62, ease: [0.16, 1, 0.3, 1] } },
@@ -77,7 +77,7 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                   <p className="mt-4 max-w-[34rem] text-sm font-semibold leading-6 text-slate-600 sm:text-base sm:leading-7">{item.summary}</p>
                   <p className="mt-3 text-sm font-extrabold leading-6 text-[#2f5eac]">{item.eyebrow}</p>
                   <span className="mt-5 inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[#4b85e2]/24 bg-[#eef5ff] px-3 text-[0.68rem] font-black uppercase tracking-[0.08em] text-[#2f5eac] transition group-hover:bg-[#4b85e2] group-hover:text-white sm:px-4 sm:text-xs sm:tracking-[0.12em]">
-                    Ver características
+                    Características
                     <ArrowRight size={16} weight="bold" aria-hidden />
                   </span>
                 </div>

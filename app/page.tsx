@@ -180,7 +180,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-2">
-              <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_-64px_rgba(75,133,226,0.55)]">
+              <article className="overflow-hidden rounded-[1.75rem] border border-[#d5e4f7] bg-[#f3f8ff] shadow-[0_24px_80px_-64px_rgba(75,133,226,0.55)]">
                 <div className="relative aspect-[16/11] sm:aspect-[4/3]">
                   <Image
                     src={services[0].image}
@@ -206,7 +206,7 @@ export default function Home() {
                   </ul>
                 </div>
               </article>
-              <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_80px_-64px_rgba(75,133,226,0.45)]">
+              <article className="overflow-hidden rounded-[1.75rem] border border-[#d5e4f7] bg-[#f3f8ff] shadow-[0_24px_80px_-64px_rgba(75,133,226,0.45)]">
                 <div className="relative aspect-[16/11] sm:aspect-[4/3]">
                   <Image
                     src={services[1].image}

@@ -36,7 +36,7 @@ function CountValue({ value, suffix }: { value: number; suffix: string }) {
 export function CountUpStats({ items }: { items: Stat[] }) {
   return (
     <motion.div
-      className="grid overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white sm:grid-cols-3"
+      className="grid overflow-hidden rounded-[1.25rem] border border-[#d5e4f7] bg-white sm:grid-cols-3"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
@@ -48,8 +48,8 @@ export function CountUpStats({ items }: { items: Stat[] }) {
       {items.map((stat, index) => (
         <motion.div
           key={stat.label}
-          className={`group border-b border-slate-200 p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 md:p-6 ${
-            index === 1 ? "bg-[#4b85e2] text-white" : "bg-white text-[#12242c]"
+          className={`group border-b border-[#d5e4f7] p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 md:p-6 ${
+            index === 1 ? "bg-[#4b85e2] text-white" : "bg-[#f3f8ff] text-[#12242c]"
           }`}
           variants={{
             hidden: { opacity: 0, y: 22 },
