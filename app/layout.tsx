@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -51,7 +53,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-CL" className={`${outfit.variable} ${manrope.variable}`}>
-      <body className="font-[var(--font-body)] antialiased">{children}</body>
+      <body className="font-[var(--font-body)] antialiased">
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
