@@ -288,13 +288,13 @@ export default function Home() {
                 <ArrowRight size={18} weight="bold" aria-hidden />
               </Link>
             </div>
-            <div className="relative min-h-[20rem] overflow-hidden bg-[#4b85e2] sm:min-h-[25rem] lg:min-h-full">
+            <div className="relative min-h-[24rem] overflow-hidden bg-[#4b85e2] sm:min-h-[34rem] lg:min-h-full">
               <Image
                 src="/images/contact.png"
                 alt="Técnico de limpieza de piscinas listo para atender una cotización"
                 fill
                 sizes="(min-width: 1024px) 52vw, 100vw"
-                className="object-cover object-[54%_center] sm:object-center"
+                className="object-cover object-[58%_center] sm:object-[56%_center] lg:object-[54%_center]"
               />
               <div className="absolute inset-0 bg-[#12242c]/8" />
             </div>
