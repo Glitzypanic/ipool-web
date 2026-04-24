@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Informe visual de diseño web - iPool</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #12242c; background: #eef5ff; }
+  .page { min-height: 273mm; page-break-after: always; background: #f8fbff; padding: 0; position: relative; overflow: hidden; }
+  .cover { background: #12242c; color: white; display: grid; grid-template-rows: auto 1fr auto; }
+  .cover-shot { width: 100%; height: 150mm; object-fit: cover; object-position: top center; display: block; }
+  .cover .top { position: absolute; left: 18mm; top: 15mm; display: flex; align-items: center; gap: 12px; z-index: 2; }
+  .logo-box { background: rgba(255,255,255,.92); border-radius: 20px; padding: 10px 16px; box-shadow: 0 18px 50px rgba(0,0,0,.18); }
+  .logo-box img { width: 118px; display: block; }
+  .pill { display: inline-block; border: 1px solid rgba(255,255,255,.2); background: rgba(75,133,226,.9); color: white; border-radius: 999px; padding: 7px 12px; font-weight: 800; font-size: 9pt; text-transform: uppercase; letter-spacing: .08em; }
+  .cover-text { padding: 16mm 18mm 10mm; }
+  h1 { margin: 0; font-size: 37pt; line-height: .96; letter-spacing: 0; }
+  .cover p { max-width: 150mm; color: rgba(255,255,255,.76); font-size: 13pt; line-height: 1.45; margin: 8mm 0 0; }
+  .cover-meta { display: flex; justify-content: space-between; gap: 10mm; padding: 0 18mm 12mm; color: rgba(255,255,255,.68); font-size: 9.5pt; border-top: 1px solid rgba(255,255,255,.12); padding-top: 7mm; }
+  .intro { padding: 16mm 18mm; background: white; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; align-items: stretch; }
+  .intro h2, .section h2 { margin: 0; font-size: 24pt; line-height: 1.05; color: #12242c; }
+  .intro p, .section p { margin: 4mm 0 0; color: #52666f; font-size: 11.5pt; line-height: 1.48; }
+  .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin-top: 8mm; }
+  .swatch { min-height: 32mm; border-radius: 16px; color: white; padding: 5mm; display: flex; flex-direction: column; justify-content: flex-end; font-size: 9pt; font-weight: 800; box-shadow: 0 18px 45px rgba(18,36,44,.13); }
+  .swatch small { display: block; opacity: .76; font-weight: 700; margin-top: 1mm; }
+  .visual-card { border: 1px solid #d9e5f7; border-radius: 22px; background: #eef5ff; padding: 8mm; }
+  .visual-card strong { color: #2f5eac; }
+  .section { padding: 12mm 14mm; display: grid; grid-template-rows: auto auto 1fr; gap: 6mm; }
+  .section-header { display: grid; grid-template-columns: .72fr 1fr; gap: 9mm; align-items: end; }
+  .kicker { color: #2f5eac; font-size: 8.5pt; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 3mm; }
+  .section-shot-wrap { border-radius: 22px; overflow: hidden; box-shadow: 0 22px 60px rgba(75,133,226,.2); background: white; border: 1px solid #d9e5f7; }
+  .section-shot { display: block; width: 100%; max-height: 148mm; object-fit: cover; object-position: top center; }
+  .notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-top: 1mm; }
+  .note { background: white; border: 1px solid #d9e5f7; border-radius: 16px; padding: 5mm; color: #40545e; font-size: 10pt; line-height: 1.35; box-shadow: 0 12px 32px rgba(18,36,44,.05); }
+  .note::before { content: ''; display: block; width: 22px; height: 4px; border-radius: 99px; background: #ffb600; margin-bottom: 4mm; }
+  .responsive { padding: 12mm 14mm; background: white; }
+  .responsive-grid { display: grid; grid-template-columns: .86fr .86fr 1fr; gap: 6mm; align-items: center; margin-top: 8mm; }
+  .phone { border-radius: 28px; overflow: hidden; border: 6px solid #12242c; box-shadow: 0 22px 60px rgba(18,36,44,.18); background: #12242c; }
+  .phone img { width: 100%; display: block; }
+  .responsive-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .responsive-copy .note { margin-bottom: 4mm; }
+  .closing { padding: 18mm; background: #12242c; color: white; display: flex; flex-direction: column; justify-content: center; }
+  .closing h2 { color: white; font-size: 32pt; line-height: 1; margin: 0 0 7mm; }
+  .closing p { color: rgba(255,255,255,.74); font-size: 13pt; max-width: 150mm; line-height: 1.48; }
+  .next { display: grid; grid-template-columns: repeat(3,1fr); gap: 5mm; margin-top: 12mm; }
+  .next div { border: 1px solid rgba(255,255,255,.15); border-radius: 18px; padding: 6mm; background: rgba(255,255,255,.06); color: rgba(255,255,255,.82); font-size: 10.5pt; line-height: 1.4; }
+  .next strong { display: block; color: #ffb600; margin-bottom: 2mm; }
+</style>
+</head>
+<body>
+<section class="page cover">
+  <img class="cover-shot" src="informe-capturas/01-hero.png" alt="Inicio de la página iPool">
+  <div class="top"><div class="logo-box"><img src="public/images/ipool-logo-blue.png" alt="iPool"></div><span class="pill">Informe visual</span></div>
+  <div class="cover-text">
+    <h1>Diseño web iPool<br><span style="color:#ffb600">sección por sección</span></h1>
+    <p>Una presentación más visual para mostrar al cliente cómo se resolvió la página, por qué se eligió este estilo y cómo cada bloque ayuda a generar confianza y cotizaciones.</p>
+  </div>
+  <div class="cover-meta"><span>iPool Servicios de Piscinas</span><span>24 de abril de 2026</span></div>
+</section>
+<section class="page intro">
+  <div class="intro-grid">
+    <div>
+      <div class="kicker">Enfoque general</div>
+      <h2>Una landing clara, fresca y enfocada en cotizar.</h2>
+      <p>La página guía al usuario desde una primera impresión visual hacia los servicios, beneficios, proyectos y contacto por WhatsApp.</p>
+      <p>La idea fue evitar una página cargada y construir una experiencia simple: ver, entender y contactar.</p>
+    </div>
+    <div class="visual-card">
+      <div class="kicker">Paleta de marca</div>
+      <p><strong>Los colores nacen del logo</strong>, por eso el diseño se siente coherente de principio a fin. El azul comunica agua limpia y confianza; el amarillo se reserva para acentos de brillo y atención.</p>
+      <div class="palette">
+        <div class="swatch" style="background:#4b85e2">Azul iPool<small>#4b85e2</small></div>
+        <div class="swatch" style="background:#2f5eac">Azul profundo<small>#2f5eac</small></div>
+        <div class="swatch" style="background:#ffb600;color:#12242c">Brillo<small>#ffb600</small></div>
+        <div class="swatch" style="background:#12242c">Contraste<small>#12242c</small></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10mm" class="section-shot-wrap"><img class="section-shot" style="max-height:132mm" src="informe-capturas/00-full-page.png" alt="Vista completa de la página"></div>
+</section>
+
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Primera impresión</div><h2>Inicio con promesa clara</h2></div>
+    <p>La portada muestra de inmediato el rubro, el beneficio principal y las dos acciones clave: cotizar o ver proyectos.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/01-hero.png" alt="Inicio con promesa clara"></div>
+  <div class="notes"><div class="note">Imagen amplia de piscina para generar deseo y contexto.</div><div class="note">Colores del logo aplicados en botones, acentos y navegación.</div><div class="note">Mensaje directo: piscina limpia, brillante y lista para usar.</div></div>
+</section>
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Confianza</div><h2>Quiénes somos</h2></div>
+    <p>Esta sección humaniza la marca y presenta trayectoria antes de vender el servicio.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/02-quienes-somos.png" alt="Quiénes somos"></div>
+  <div class="notes"><div class="note">Se destaca que iPool es una empresa familiar.</div><div class="note">Las métricas refuerzan experiencia y volumen de trabajo.</div><div class="note">La imagen lateral equilibra información y sensación de servicio real.</div></div>
+</section>
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Educación comercial</div><h2>Beneficios del revestimiento</h2></div>
+    <p>El diseño transforma argumentos técnicos en beneficios fáciles de entender.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/03-beneficios.png" alt="Beneficios del revestimiento"></div>
+  <div class="notes"><div class="note">Tarjetas visuales para no agobiar con texto.</div><div class="note">Iconos e imágenes ayudan a leer rápido cada ventaja.</div><div class="note">Cada beneficio puede profundizarse sin romper el recorrido.</div></div>
+</section>
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Oferta</div><h2>Servicios principales</h2></div>
+    <p>Los servicios se separan en bloques grandes para que el cliente identifique rápido qué necesita.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/04-servicios.png" alt="Servicios principales"></div>
+  <div class="notes"><div class="note">Revestimiento y mantención tienen presencia propia.</div><div class="note">Listas con checks convierten características en beneficios.</div><div class="note">Las imágenes muestran el tipo de resultado esperado.</div></div>
+</section>
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Prueba visual</div><h2>Proyectos y antes/después</h2></div>
+    <p>La galería aporta credibilidad y ayuda al cliente a imaginar el resultado en su propia piscina.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/05-proyectos.png" alt="Proyectos y antes/después"></div>
+  <div class="notes"><div class="note">Tarjetas con imagen completa para mayor impacto.</div><div class="note">Ubicación y servicio realizado dan contexto real.</div><div class="note">Las fichas con antes/después refuerzan confianza antes de cotizar.</div></div>
+</section>
+<section class="page section">
+  <div class="section-header">
+    <div><div class="kicker">Conversión</div><h2>Contacto claro</h2></div>
+    <p>El cierre cambia a un fondo oscuro para marcar el momento de acción y dejar los datos de contacto visibles.</p>
+  </div>
+  <div class="section-shot-wrap"><img class="section-shot" src="informe-capturas/06-contacto.png" alt="Contacto claro"></div>
+  <div class="notes"><div class="note">WhatsApp se mantiene como canal principal de cotización.</div><div class="note">Teléfono y correo quedan visibles sin pasos extra.</div><div class="note">La imagen final mantiene cercanía y atención de servicio.</div></div>
+</section>
+<section class="page responsive">
+  <div class="section-header">
+    <div><div class="kicker">Responsive</div><h2>La página también está pensada para teléfono.</h2></div>
+    <p>En móvil, el contenido se ordena en una sola columna, los botones son grandes y el menú se vuelve táctil. Esto es clave porque muchas cotizaciones llegan desde WhatsApp y navegación móvil.</p>
+  </div>
+  <div class="responsive-grid">
+    <div class="phone"><img src="informe-capturas/07-mobile-inicio.png" alt="Inicio móvil"></div>
+    <div class="phone"><img src="informe-capturas/08-mobile-servicios.png" alt="Servicios móvil"></div>
+    <div class="responsive-copy">
+      <div class="note">El hero mantiene impacto visual y CTAs claros incluso en pantalla pequeña.</div>
+      <div class="note">Los servicios se apilan para conservar lectura cómoda y botones fáciles de tocar.</div>
+      <div class="note">El botón flotante de WhatsApp permite cotizar desde cualquier punto del recorrido.</div>
+    </div>
+  </div>
+</section>
+<section class="page closing">
+  <div class="kicker" style="color:#ffb600">Cierre</div>
+  <h2>Un diseño visual, coherente y comercial.</h2>
+  <p>La propuesta presenta a iPool con una estética conectada al logo y al mundo de las piscinas. Cada sección tiene una función concreta: atraer, explicar, demostrar confianza y facilitar el contacto.</p>
+  <div class="next">
+    <div><strong>1. Reemplazar fotos</strong>Sumar registros reales de trabajos iPool para reforzar autenticidad.</div>
+    <div><strong>2. Agregar testimonios</strong>Incluir opiniones de clientes cuando estén disponibles.</div>
+    <div><strong>3. Activar medición</strong>Medir clics a WhatsApp para evaluar interés y conversiones.</div>
+  </div>
+</section>
+</body>
+</html>
