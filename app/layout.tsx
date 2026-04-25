@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { allowIndexing, businessInfo, siteUrl } from "@/lib/site-data";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -17,32 +18,69 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ipool.cl"),
+  metadataBase: new URL(siteUrl),
+  applicationName: businessInfo.shortName,
   title: {
-    default: "iPool | Limpieza y mantención de piscinas",
+    default: "iPool | Revestimiento, limpieza y mantención de piscinas",
     template: "%s | iPool",
   },
   description:
-    "Servicio de limpieza, mantención y revestimiento en fibra de vidrio para piscinas en Chile. Cotiza por WhatsApp con iPool.",
+    "Mantención de piscinas a domicilio en Santiago y revestimiento en fibra de vidrio en Santiago, Rancagua y Valparaíso. Cotiza por WhatsApp con iPool.",
   keywords: [
+    "revestimiento piscina fibra de vidrio",
+    "revestimiento de piscinas",
+    "revestimiento de piscinas Santiago",
+    "revestimiento de piscinas Rancagua",
+    "revestimiento de piscinas Valparaíso",
+    "reparación filtraciones piscina",
     "limpieza de piscinas",
+    "limpieza de piscinas Santiago",
     "mantención de piscinas",
-    "revestimiento fibra de vidrio piscina",
+    "mantención de piscinas Santiago",
+    "mantención de piscinas a domicilio",
     "piscinas Chile",
     "iPool",
   ],
+  authors: [{ name: businessInfo.name }],
+  creator: businessInfo.name,
+  publisher: businessInfo.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "iPool | Haz que tu piscina brille",
+    title: "iPool | Revestimiento, limpieza y mantención de piscinas",
     description:
-      "Limpieza, mantención y revestimiento en fibra de vidrio para piscinas durante todo el año.",
-    url: "https://ipool.cl",
+      "Mantención de piscinas en Santiago y revestimiento en fibra de vidrio en Santiago, Rancagua y Valparaíso.",
+    url: siteUrl,
     siteName: "iPool",
+    images: [
+      {
+        url: "/images/ipool-hero.webp",
+        width: 1200,
+        height: 630,
+        alt: "Piscina residencial cristalina mantenida por iPool",
+      },
+    ],
     locale: "es_CL",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "iPool | Revestimiento y mantención de piscinas",
+    description:
+      "Cotiza mantención de piscinas en Santiago y revestimiento en fibra de vidrio en Santiago, Rancagua y Valparaíso.",
+    images: ["/images/ipool-hero.webp"],
+  },
   robots: {
-    index: true,
-    follow: true,
+    index: allowIndexing,
+    follow: allowIndexing,
+    googleBot: {
+      index: allowIndexing,
+      follow: allowIndexing,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

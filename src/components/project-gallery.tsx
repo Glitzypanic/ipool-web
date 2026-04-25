@@ -14,7 +14,7 @@ export function ProjectGallery({ items }: { items: Project[] }) {
   return (
     <>
       <motion.div
-        className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
@@ -28,7 +28,7 @@ export function ProjectGallery({ items }: { items: Project[] }) {
             key={project.id}
             type="button"
             onClick={() => setActiveProject(project)}
-            className="group relative min-h-[18rem] overflow-hidden rounded-[1.25rem] text-left shadow-[0_24px_80px_-52px_rgba(75,133,226,0.5)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:min-h-[20rem] sm:rounded-[1.5rem] lg:min-h-[22rem]"
+            className="group relative min-h-[18rem] overflow-hidden rounded-[1.25rem] text-left shadow-[0_24px_80px_-52px_rgba(75,133,226,0.5)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:min-h-[20rem] sm:rounded-[1.5rem] xl:min-h-[22rem]"
             variants={{
               hidden: { opacity: 0, y: 28 },
               show: { opacity: 1, y: 0, transition: { duration: 0.64, ease: [0.16, 1, 0.3, 1] } },
@@ -38,7 +38,7 @@ export function ProjectGallery({ items }: { items: Project[] }) {
               src={project.image}
               alt={project.title}
               fill
-              sizes="(min-width: 1024px) 34vw, (min-width: 768px) 50vw, 100vw"
+              sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover transition duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-[#12242c]/58" />
@@ -51,7 +51,7 @@ export function ProjectGallery({ items }: { items: Project[] }) {
                 {project.title}
               </h3>
               <div className="mt-4 flex items-center gap-2 text-sm font-extrabold text-[#bff3fb]">
-                Ver antes y despues
+                Ver antes y después
                 <ArrowRight size={16} weight="bold" aria-hidden />
               </div>
             </div>
@@ -98,7 +98,7 @@ export function ProjectGallery({ items }: { items: Project[] }) {
               <div className="grid gap-4 p-5 md:grid-cols-2 md:p-7">
                 {[
                   ["Antes", activeProject.before],
-                  ["Despues", activeProject.after],
+                  ["Después", activeProject.after],
                 ].map(([label, src]) => (
                   <div key={label} className="overflow-hidden rounded-[1.25rem] bg-slate-100">
                     <div className="relative aspect-[4/3]">

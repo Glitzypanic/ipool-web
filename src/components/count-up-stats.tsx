@@ -45,25 +45,29 @@ export function CountUpStats({ items }: { items: Stat[] }) {
         show: { transition: { staggerChildren: 0.08 } },
       }}
     >
-      {items.map((stat, index) => (
-        <motion.div
-          key={stat.label}
-          className={`group border-b border-[#d5e4f7] p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 md:p-6 ${
-            index === 1 ? "bg-[#4b85e2] text-white" : "bg-[#f3f8ff] text-[#12242c]"
-          }`}
-          variants={{
-            hidden: { opacity: 0, y: 22 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.56, ease: [0.16, 1, 0.3, 1] } },
-          }}
-        >
-          <p className={`font-[var(--font-display)] text-4xl font-black tracking-tight sm:text-5xl ${index === 1 ? "text-white" : "text-[#12242c]"}`}>
-            <CountValue value={stat.value} suffix={stat.suffix} />
-          </p>
-          <p className={`mt-2 max-w-[12rem] text-sm font-extrabold leading-5 ${index === 1 ? "text-white/78" : "text-slate-500"}`}>
-            {stat.label}
-          </p>
-        </motion.div>
-      ))}
+      {items.map((stat, index) => {
+        const isFeatured = index === 1;
+
+        return (
+          <motion.div
+            key={stat.label}
+            className={`group flex items-center gap-4 border-b border-[#d5e4f7] p-5 last:border-b-0 sm:block sm:border-b-0 sm:border-r sm:last:border-r-0 md:p-6 ${
+              isFeatured ? "bg-[#4b85e2] text-white" : "bg-[#f3f8ff] text-[#12242c]"
+            }`}
+            variants={{
+              hidden: { opacity: 0, y: 22 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.56, ease: [0.16, 1, 0.3, 1] } },
+            }}
+          >
+            <p className={`min-w-[5.25rem] shrink-0 font-[var(--font-display)] text-4xl font-black tracking-tight sm:min-w-0 sm:text-5xl ${isFeatured ? "text-white" : "text-[#12242c]"}`}>
+              <CountValue value={stat.value} suffix={stat.suffix} />
+            </p>
+            <p className={`text-sm font-extrabold leading-5 sm:mt-2 ${isFeatured ? "text-white/78" : "text-slate-500"}`}>
+              {stat.label}
+            </p>
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 }
