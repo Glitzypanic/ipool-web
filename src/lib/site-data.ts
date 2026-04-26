@@ -191,7 +191,7 @@ export const projects = [
     title: "Renovación con diseño propio en Vitacura",
     location: "Vitacura, Región Metropolitana",
     service: "Revestimiento en fibra de vidrio y terminación personalizada",
-    image: "/images/projects/vitacura1.jpeg",
+    image: "/images/projects/vitacura2.jpeg",
     before: "/images/projects/vitacura1.jpeg",
     after: "/images/projects/vitacura2.jpeg",
     summary:
@@ -202,7 +202,7 @@ export const projects = [
     title: "Piscina con nuevos aires en Quilpué",
     location: "Quilpué, Región de Valparaíso",
     service: "Renovación de terminación y revestimiento en fibra de vidrio",
-    image: "/images/projects/quilpue.jpeg",
+    image: "/images/projects/quilpue2.jpeg",
     before: "/images/projects/quilpue.jpeg",
     after: "/images/projects/quilpue2.jpeg",
     summary:
@@ -213,7 +213,7 @@ export const projects = [
     title: "Piscina familiar renovada en Lo Barnechea",
     location: "Lo Barnechea, Región Metropolitana",
     service: "Revestimiento en fibra de vidrio y recuperación de superficie",
-    image: "/images/projects/barnechea.jpg",
+    image: "/images/projects/barnechea2.jpg",
     before: "/images/projects/barnechea.jpg",
     after: "/images/projects/barnechea2.jpg",
     summary:
@@ -224,7 +224,7 @@ export const projects = [
     title: "Nueva vida para una comunidad de edificio en Santiago Centro",
     location: "Santiago Centro, Región Metropolitana",
     service: "Revestimiento en fibra de vidrio para piscina comunitaria",
-    image: "/images/projects/santiago.jpg",
+    image: "/images/projects/santiago2.jpg",
     before: "/images/projects/santiago.jpg",
     after: "/images/projects/santiago2.jpg",
     summary:
