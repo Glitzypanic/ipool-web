@@ -39,6 +39,9 @@ export function SiteHeader() {
   useEffect(() => {
     if (!isMenuOpen) return;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
@@ -46,23 +49,27 @@ export function SiteHeader() {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [isMenuOpen]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-30 px-3 py-3 transition-transform duration-300 ease-out sm:px-4 sm:py-4 md:px-6 ${
-        isHeaderVisible || isMenuOpen ? "translate-y-0" : "-translate-y-[115%]"
-      }`}
-    >
+    <>
       {isMenuOpen ? (
-          <button
-            type="button"
-            className="fixed inset-0 z-0 cursor-default bg-[#12242c]/58 backdrop-blur-[0.18rem] lg:hidden"
-            aria-label="Cerrar menú"
-            onClick={closeMenu}
-          />
-        ) : null}
+        <button
+          type="button"
+          className="fixed inset-0 z-40 cursor-default bg-[#12242c]/58 backdrop-blur-[0.18rem] lg:hidden"
+          aria-label="Cerrar menú"
+          onClick={closeMenu}
+        />
+      ) : null}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 px-3 py-3 transition-transform duration-300 ease-out sm:px-4 sm:py-4 md:px-6 ${
+          isHeaderVisible || isMenuOpen ? "translate-y-0" : "-translate-y-[115%]"
+        }`}
+      >
       <div className="liquid-panel relative z-20 mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full px-3 py-2.5 sm:px-4 sm:py-3">
         <Link
           href="#inicio"
@@ -134,6 +141,7 @@ export function SiteHeader() {
             </Link>
           </div>
         ) : null}
-    </header>
+      </header>
+    </>
   );
 }
