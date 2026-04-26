@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -9,8 +9,33 @@ import { navItems, whatsappHref } from "@/lib/site-data";
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY.current;
+
+      if (currentScrollY < 80 || scrollDelta < -8) {
+        setIsHeaderVisible(true);
+      } else if (scrollDelta > 8 && currentScrollY > 140) {
+        setIsHeaderVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    lastScrollY.current = window.scrollY;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -26,7 +51,11 @@ export function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-30 px-3 py-3 sm:px-4 sm:py-4 md:px-6">
+    <motion.header
+      className="fixed inset-x-0 top-0 z-30 px-3 py-3 sm:px-4 sm:py-4 md:px-6"
+      animate={{ y: isHeaderVisible || isMenuOpen ? 0 : "-115%" }}
+      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+    >
       <AnimatePresence>
         {isMenuOpen ? (
           <motion.button
@@ -118,6 +147,6 @@ export function SiteHeader() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

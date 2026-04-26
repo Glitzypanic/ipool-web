@@ -50,7 +50,7 @@ export const stats = [
 export const services = [
   {
     title: "Revestimiento en Fibra de Vidrio",
-    image: "/images/revestimiento-fibra.webp",
+    image: "/images/pools/piscina4.jpg",
     description:
       "Transformamos tu piscina con revestimiento en fibra de vidrio a domicilio en Santiago, Rancagua y Valparaíso.",
     points: [
@@ -76,7 +76,7 @@ export const services = [
   },
   {
     title: "Pintado a base de resina",
-    image: "/images/revestimiento-fibra.webp",
+    image: "/images/pools/piscina5.jpg",
     description:
       "Aplicamos pintura a base de resina para renovar piscinas que necesitan una terminación firme, uniforme y de mejor resistencia.",
     points: [
