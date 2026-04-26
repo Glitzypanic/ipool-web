@@ -64,7 +64,6 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                     {item.title}
                   </h3>
                   <p className="mt-4 max-w-[34rem] text-sm font-semibold leading-6 text-slate-600 sm:text-base sm:leading-7">{item.summary}</p>
-                  <p className="mt-3 text-sm font-extrabold leading-6 text-[#2f5eac]">{item.eyebrow}</p>
                   <span className="mt-5 inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[#4b85e2]/24 bg-[#eef5ff] px-3 text-[0.68rem] font-black uppercase tracking-[0.08em] text-[#2f5eac] transition group-hover:bg-[#4b85e2] group-hover:text-white sm:px-4 sm:text-xs sm:tracking-[0.12em]">
                     Características
                     <ArrowRight size={16} weight="bold" aria-hidden />
@@ -114,7 +113,6 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                     <h3 className="font-[var(--font-display)] text-3xl font-black tracking-tight text-[#12242c] sm:text-4xl md:text-5xl">
                       {activeBenefit.title}
                     </h3>
-                    <p className="mt-3 text-sm font-extrabold leading-6 text-[#2f5eac]">{activeBenefit.eyebrow}</p>
                   </div>
                 </div>
                 <p className="relative mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">{activeBenefit.detail}</p>

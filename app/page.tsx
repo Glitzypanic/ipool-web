@@ -182,7 +182,7 @@ export default function Home() {
                 <span className="marker-highlight">brille todo el año.</span>
               </h1>
               <p className="mt-5 max-w-[36rem] text-base font-extrabold leading-7 text-[#102a36] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
-                Nosotros nos encargamos del revestimiento y la mantención para que tú solo disfrutes.
+                Nosotros nos encargamos para que tú solo disfrutes.
               </p>
               <div className="mt-10 flex w-fit items-center gap-3 rounded-2xl bg-white/72 px-4 py-2 text-xs font-black leading-6 text-[#102a36] backdrop-blur-md sm:text-base">
                 <SealCheck
@@ -424,14 +424,13 @@ export default function Home() {
                     Proyectos
                   </p>
                   <h2 className="mt-5 font-[var(--font-display)] text-3xl font-black tracking-tight text-[#12242c] sm:text-4xl md:text-5xl">
-                    Antes y después con contexto real.
+                    Proyectos realizados.
                   </h2>
                 </div>
                 <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 md:justify-self-end">
-                  Cada tarjeta abre una ficha con ubicación, servicios
-                  realizados y una comparativa visual. Las fotos actuales
-                  funcionan como base editable para reemplazar por material del
-                  cliente.
+                  Conoce trabajos reales de revestimiento, recuperación y
+                  renovación de piscinas realizados por iPool en distintos
+                  sectores de la zona centro.
                 </p>
               </div>
               <ProjectGallery items={projects} />
@@ -450,11 +449,6 @@ export default function Home() {
                   <h2 className="mt-5 font-[var(--font-display)] text-3xl font-black tracking-tight text-[#12242c] sm:text-4xl md:text-5xl">
                     Lo que conviene saber antes de cotizar tu piscina.
                   </h2>
-                  <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                    Respuestas directas sobre revestimiento en fibra de vidrio,
-                    limpieza, mantención y reparación de filtraciones para
-                    piscinas residenciales.
-                  </p>
                 </div>
                 <div className="grid gap-3">
                   {faqs.map((faq) => (
@@ -651,7 +645,7 @@ export default function Home() {
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/64">
                   Atendemos y cotizamos a domicilio:
-                  mantenciones solo en Región Metropolitana y revestimientos en
+                  mantenciones sólo en Región Metropolitana y revestimientos en
                   fibra de vidrio en más de 4 regiones según evaluación.
                 </p>
               </div>

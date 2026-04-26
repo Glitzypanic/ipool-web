@@ -136,7 +136,7 @@ export function SiteHeader() {
               onClick={closeMenu}
               className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#4b85e2] px-5 text-sm font-black text-white transition hover:bg-[#2f5eac] active:scale-[0.99]"
             >
-              Cotizar por WhatsApp
+              Cotiza por WhatsApp
               <ArrowRight size={18} weight="bold" aria-hidden />
             </Link>
           </div>

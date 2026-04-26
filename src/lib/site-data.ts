@@ -27,7 +27,7 @@ export const businessInfo = {
 };
 
 export const socialLinks = [
-  { label: "Facebook", value: "IPOOL Piscinas", href: "https://www.facebook.com/search/top?q=IPOOL%20Piscinas" },
+  { label: "Facebook", value: "IPOOL Piscinas", href: "https://www.facebook.com/ipool.cl" },
   { label: "Instagram", value: "@ipool.cl", href: "https://www.instagram.com/ipool.cl" },
   { label: "TikTok", value: "@ipool.cl", href: "https://www.tiktok.com/@ipool.cl" },
 ];
@@ -44,7 +44,7 @@ export const navItems = [
 export const stats = [
   { value: 7, suffix: "+", label: "Años de experiencia" },
   { value: 200, suffix: "+", label: "Proyectos realizados" },
-  { value: 4, suffix: "+", label: "Presentes en más de 4 regiones para revestimiento en fibra de vidrio" },
+  { value: 4, suffix: "+", label: "regiones disponibles para revestimiento en fibra de vidrio" },
 ];
 
 export const services = [
@@ -57,7 +57,7 @@ export const services = [
       "Evita pintar tu piscina todos los años.",
       "Elimina fugas y filtraciones.",
       "Resistente a químicos y rayos UV.",
-      "Dura hasta 15 años con mayor durabilidad.",
+      "Con una durabilidad de hasta 15 años.",
       "Flexible ante sismos y movimientos de tierra.",
     ],
   },
@@ -83,7 +83,7 @@ export const services = [
       "Preparación y limpieza de la superficie.",
       "Aplicación de resina para mayor adherencia.",
       "Terminación uniforme y renovada.",
-      "Ideal para recuperar el color de la piscina.",
+      "Ideal para recuperar el color de tu piscina.",
     ],
   },
   {
@@ -116,7 +116,7 @@ export const faqs = [
   {
     question: "¿Sirve la fibra de vidrio para reparar filtraciones de piscina?",
     answer:
-      "Sí. El revestimiento en fibra de vidrio crea una membrana continua e impermeable que ayuda a sellar el vaso de la piscina y reducir pérdidas de agua por fisuras o superficies deterioradas.",
+      "Sí, el revestimiento en fibra de vidrio crea una membrana continua e impermeable que ayuda a sellar el vaso de la piscina y reducir pérdidas de agua por fisuras o superficies deterioradas.",
   },
   {
     question: "¿Qué incluye la limpieza y mantención de piscinas?",
@@ -126,7 +126,7 @@ export const faqs = [
   {
     question: "¿Atienden piscinas en Santiago y la zona centro de Chile?",
     answer:
-      "Sí. iPool realiza mantenciones de piscinas prácticamente en todo Santiago. Para revestimientos en fibra de vidrio, atiende proyectos en Santiago, Rancagua y Valparaíso según disponibilidad y alcance del trabajo.",
+      "Sí, iPool realiza mantenciones de piscinas prácticamente en todo Santiago. Para revestimientos en fibra de vidrio, atiende proyectos en Santiago, Rancagua y Valparaíso según disponibilidad y alcance del trabajo.",
   },
   {
     question: "¿Es mejor revestir con fibra de vidrio o pintar la piscina?",
