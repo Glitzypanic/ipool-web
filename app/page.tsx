@@ -182,7 +182,7 @@ export default function Home() {
                 <span className="marker-highlight">brille todo el año.</span>
               </h1>
               <p className="mt-5 max-w-[36rem] text-base font-extrabold leading-7 text-[#102a36] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
-                Nosotros nos encargamos para que tú solo disfrutes.
+                Nosotros nos encargamos para que tu solo disfrutes.
               </p>
               <div className="mt-10 flex w-fit items-center gap-3 rounded-2xl bg-white/72 px-4 py-2 text-xs font-black leading-6 text-[#102a36] backdrop-blur-md sm:text-base">
                 <SealCheck
