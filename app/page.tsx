@@ -150,19 +150,21 @@ export default function Home() {
       ))}
       <SiteHeader />
       <main id="inicio" className="overflow-hidden bg-[#eef5ff]">
-        <section className="relative min-h-[42rem] px-4 pb-12 pt-28 sm:min-h-[44rem] md:min-h-[48rem] md:px-6 md:pt-32 lg:min-h-[100dvh]">
+        <section className="relative min-h-[42rem] overflow-hidden px-4 pb-12 pt-28 sm:min-h-[44rem] md:min-h-[48rem] md:px-6 md:pt-32 lg:min-h-[100dvh]">
           <Image
             src={heroImage}
             alt="Piscina residencial con agua cristalina y terraza moderna"
             fill
             priority
+            fetchPriority="high"
+            quality={68}
             sizes="100vw"
-            className="object-cover object-[58%_center] md:object-center"
+            className="object-cover object-[63%_center] sm:object-[58%_center] md:object-center"
           />
           <div className="absolute inset-0 bg-white/45 md:bg-white/45" />
           <div className="water-grid absolute inset-0 opacity-25" />
-          <div className="relative mx-auto grid min-h-[calc(42rem-10rem)] max-w-7xl items-center sm:min-h-[calc(44rem-10rem)] md:min-h-[calc(48rem-10rem)] lg:min-h-[calc(100dvh-10rem)]">
-            <div className="reveal-up max-w-[56rem]">
+          <div className="relative mx-auto grid min-h-[calc(42rem-10rem)] w-full min-w-0 max-w-7xl items-center sm:min-h-[calc(44rem-10rem)] md:min-h-[calc(48rem-10rem)] lg:min-h-[calc(100dvh-10rem)]">
+            <div className="reveal-up w-full min-w-0 max-w-[calc(100vw-2rem)] sm:max-w-[56rem]">
               <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-slate-200 bg-white/78 px-3 py-2 text-xs font-extrabold text-[#2f5eac] backdrop-blur-md sm:mb-6 sm:px-4 sm:text-sm">
                 <Sparkle
                   className="text-[#ffb600]"
@@ -174,8 +176,9 @@ export default function Home() {
                   Revestimiento, limpieza y mantención
                 </span>
               </div>
-              <h1 className="max-w-[12ch] font-[var(--font-display)] text-[clamp(3rem,15vw,5rem)] font-black leading-[0.94] tracking-tight text-[#12242c] sm:max-w-[13ch] sm:text-6xl md:max-w-[14ch] md:text-7xl lg:max-w-[15ch] lg:text-8xl">
+              <h1 className="max-w-[min(100%,8.8ch)] text-wrap font-[var(--font-display)] text-[clamp(2.2rem,9.7vw,3rem)] font-black leading-[1] tracking-tight text-[#12242c] sm:max-w-[13ch] sm:text-6xl sm:leading-[0.94] md:max-w-[14ch] md:text-7xl lg:max-w-[15ch] lg:text-8xl">
                 Haz que tu piscina{" "}
+                <br className="sm:hidden" />
                 <span className="marker-highlight">brille todo el año.</span>
               </h1>
               <p className="mt-5 max-w-[36rem] text-base font-extrabold leading-7 text-[#102a36] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">

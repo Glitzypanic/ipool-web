@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Drop, SealCheck, ShieldCheck, Sparkle, Sun, Waves, X } from "@phosphor-icons/react";
 import { useState } from "react";
 import type { revestimientoBenefits } from "@/lib/site-data";
@@ -22,13 +21,7 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
 
   return (
     <>
-      <motion.div
-        className="grid grid-cols-1 gap-4 md:grid-cols-6"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
-      >
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
         {items.map((item, index) => {
           const Icon = icons[index % icons.length];
           const sizeClass =
@@ -41,15 +34,11 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                   : "md:col-span-2";
 
           return (
-            <motion.button
+            <button
               key={item.id}
               type="button"
               onClick={() => setActiveBenefit(item)}
               className={`group relative overflow-hidden rounded-[1.25rem] border border-[#d5e4f7] bg-[#f3f8ff] p-4 text-left shadow-[0_24px_80px_-64px_rgba(75,133,226,0.42)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 hover:bg-[#eef5ff] focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:rounded-[1.5rem] sm:p-5 ${sizeClass}`}
-              variants={{
-                hidden: { opacity: 0, y: 26 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.62, ease: [0.16, 1, 0.3, 1] } },
-              }}
             >
               <div className="relative flex min-h-full flex-col gap-5">
                 <div className="relative overflow-hidden rounded-[1.1rem]">
@@ -82,26 +71,18 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                   </span>
                 </div>
               </div>
-            </motion.button>
+            </button>
           );
         })}
-      </motion.div>
+      </div>
 
-      <AnimatePresence>
-        {activeBenefit ? (
-          <motion.div
+      {activeBenefit ? (
+          <div
             className="fixed inset-0 z-40 grid place-items-center bg-[#12242c]/70 p-4 backdrop-blur-sm sm:p-6 md:p-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
             onClick={() => setActiveBenefit(null)}
           >
-            <motion.article
+            <article
               className="mx-auto max-h-[88dvh] w-full max-w-3xl overflow-y-auto rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-[0_40px_120px_-48px_rgba(0,0,0,0.55)] sm:p-5"
-              initial={{ opacity: 0, y: 18, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 14, scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 120, damping: 22 }}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="relative overflow-hidden rounded-[1.35rem]">
@@ -148,10 +129,9 @@ export function BenefitsGrid({ items }: { items: Benefit[] }) {
                   ))}
                 </div>
               </div>
-            </motion.article>
-          </motion.div>
+            </article>
+          </div>
         ) : null}
-      </AnimatePresence>
     </>
   );
 }

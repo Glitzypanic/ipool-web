@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, MapPin, X } from "@phosphor-icons/react";
 import { useState } from "react";
 import type { projects } from "@/lib/site-data";
@@ -13,26 +12,13 @@ export function ProjectGallery({ items }: { items: Project[] }) {
 
   return (
     <>
-      <motion.div
-        className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={{
-          hidden: {},
-          show: { transition: { staggerChildren: 0.09 } },
-        }}
-      >
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
         {items.map((project, index) => (
-          <motion.button
+          <button
             key={project.id}
             type="button"
             onClick={() => setActiveProject(project)}
             className="group relative min-h-[18rem] overflow-hidden rounded-[1.25rem] text-left shadow-[0_24px_80px_-52px_rgba(75,133,226,0.5)] outline-none ring-offset-4 ring-offset-white transition duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#ffb600] active:translate-y-0 sm:min-h-[20rem] sm:rounded-[1.5rem] xl:min-h-[22rem]"
-            variants={{
-              hidden: { opacity: 0, y: 28 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.64, ease: [0.16, 1, 0.3, 1] } },
-            }}
           >
             <Image
               src={project.image}
@@ -55,25 +41,17 @@ export function ProjectGallery({ items }: { items: Project[] }) {
                 <ArrowRight size={16} weight="bold" aria-hidden />
               </div>
             </div>
-          </motion.button>
+          </button>
         ))}
-      </motion.div>
+      </div>
 
-      <AnimatePresence>
-        {activeProject ? (
-          <motion.div
+      {activeProject ? (
+          <div
             className="fixed inset-0 z-40 flex items-end bg-[#12242c]/72 p-3 backdrop-blur-sm md:items-center md:p-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
             onClick={() => setActiveProject(null)}
           >
-            <motion.article
+            <article
               className="mx-auto max-h-[92dvh] w-full max-w-5xl overflow-y-auto rounded-[1.5rem] bg-white shadow-[0_40px_120px_-48px_rgba(0,0,0,0.55)]"
-              initial={{ opacity: 0, y: 40, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 24, scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 120, damping: 22 }}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex items-start justify-between gap-4 border-b border-slate-200 p-5 md:p-7">
@@ -115,10 +93,9 @@ export function ProjectGallery({ items }: { items: Project[] }) {
                 <p className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">Servicios realizados</p>
                 <p className="mt-2 text-lg font-extrabold text-[#12242c]">{activeProject.service}</p>
               </div>
-            </motion.article>
-          </motion.div>
+            </article>
+          </div>
         ) : null}
-      </AnimatePresence>
     </>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { stats } from "@/lib/site-data";
 
@@ -8,22 +7,48 @@ type Stat = (typeof stats)[number];
 
 function CountValue({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { stiffness: 42, damping: 20 });
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    const unsubscribe = springValue.on("change", (latest) => {
-      setDisplay(Math.round(latest));
-    });
+    const element = ref.current;
+    if (!element) return;
 
-    if (isInView) {
-      motionValue.set(value);
-    }
+    let frame = 0;
+    let observer: IntersectionObserver | undefined;
 
-    return unsubscribe;
-  }, [isInView, motionValue, springValue, value]);
+    const animate = () => {
+      const startedAt = performance.now();
+      const duration = 900;
+
+      const tick = (now: number) => {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplay(Math.round(value * eased));
+
+        if (progress < 1) {
+          frame = requestAnimationFrame(tick);
+        }
+      };
+
+      frame = requestAnimationFrame(tick);
+    };
+
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        animate();
+        observer?.disconnect();
+      },
+      { rootMargin: "-80px" },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer?.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, [value]);
 
   return (
     <span ref={ref}>
@@ -35,29 +60,18 @@ function CountValue({ value, suffix }: { value: number; suffix: string }) {
 
 export function CountUpStats({ items }: { items: Stat[] }) {
   return (
-    <motion.div
+    <div
       className="grid overflow-hidden rounded-[1.25rem] border border-[#d5e4f7] bg-white sm:grid-cols-3"
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: 0.08 } },
-      }}
     >
       {items.map((stat, index) => {
         const isFeatured = index === 1;
 
         return (
-          <motion.div
+          <div
             key={stat.label}
             className={`group flex items-center gap-4 border-b border-[#d5e4f7] p-5 last:border-b-0 sm:block sm:border-b-0 sm:border-r sm:last:border-r-0 md:p-6 ${
               isFeatured ? "bg-[#4b85e2] text-white" : "bg-[#f3f8ff] text-[#12242c]"
             }`}
-            variants={{
-              hidden: { opacity: 0, y: 22 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.56, ease: [0.16, 1, 0.3, 1] } },
-            }}
           >
             <p className={`min-w-[5.25rem] shrink-0 font-[var(--font-display)] text-4xl font-black tracking-tight sm:min-w-0 sm:text-5xl ${isFeatured ? "text-white" : "text-[#12242c]"}`}>
               <CountValue value={stat.value} suffix={stat.suffix} />
@@ -65,9 +79,9 @@ export function CountUpStats({ items }: { items: Stat[] }) {
             <p className={`text-sm font-extrabold leading-5 sm:mt-2 ${isFeatured ? "text-white/78" : "text-slate-500"}`}>
               {stat.label}
             </p>
-          </motion.div>
+          </div>
         );
       })}
-    </motion.div>
+    </div>
   );
 }

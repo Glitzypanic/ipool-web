@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, List, X } from "@phosphor-icons/react";
 import { navItems, whatsappHref } from "@/lib/site-data";
 
@@ -51,25 +50,19 @@ export function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <motion.header
-      className="fixed inset-x-0 top-0 z-30 px-3 py-3 sm:px-4 sm:py-4 md:px-6"
-      animate={{ y: isHeaderVisible || isMenuOpen ? 0 : "-115%" }}
-      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+    <header
+      className={`fixed inset-x-0 top-0 z-30 px-3 py-3 transition-transform duration-300 ease-out sm:px-4 sm:py-4 md:px-6 ${
+        isHeaderVisible || isMenuOpen ? "translate-y-0" : "-translate-y-[115%]"
+      }`}
     >
-      <AnimatePresence>
-        {isMenuOpen ? (
-          <motion.button
+      {isMenuOpen ? (
+          <button
             type="button"
             className="fixed inset-0 z-0 cursor-default bg-[#12242c]/58 backdrop-blur-[0.18rem] lg:hidden"
             aria-label="Cerrar menú"
             onClick={closeMenu}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
           />
         ) : null}
-      </AnimatePresence>
       <div className="liquid-panel relative z-20 mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full px-3 py-2.5 sm:px-4 sm:py-3">
         <Link
           href="#inicio"
@@ -113,15 +106,10 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
-      <AnimatePresence>
-        {isMenuOpen ? (
-          <motion.div
+      {isMenuOpen ? (
+          <div
             id="mobile-navigation"
             className="relative z-20 mx-auto mt-3 max-w-7xl overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white/94 p-3 shadow-[0_24px_80px_-48px_rgba(75,133,226,0.45)] backdrop-blur-xl lg:hidden"
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <nav className="grid gap-1" aria-label="Navegación móvil">
               {navItems.map((item) => (
@@ -144,9 +132,8 @@ export function SiteHeader() {
               Cotizar por WhatsApp
               <ArrowRight size={18} weight="bold" aria-hidden />
             </Link>
-          </motion.div>
+          </div>
         ) : null}
-      </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
