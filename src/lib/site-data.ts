@@ -3,7 +3,7 @@ export const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURICom
   "Hola iPool, quiero cotizar un servicio para mi piscina.",
 )}`;
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ipool.cl";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.ipool.cl";
 export const allowIndexing = process.env.NEXT_PUBLIC_ALLOW_INDEXING !== "false";
 
 export const businessInfo = {
