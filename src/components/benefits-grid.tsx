@@ -10,7 +10,7 @@ type Benefit = (typeof revestimientoBenefits)[number];
 const icons = [ShieldCheck, Sun, Drop, Sparkle, Waves];
 const benefitImages = [
   "/images/revestimiento-fibra.webp",
-  "/images/ipool-hero.webp",
+  "/images/mantencion3.webp",
   "/images/pools/piscina1.jpg",
   "/images/pools/piscina2.jpg",
   "/images/pools/piscina3.jpg",

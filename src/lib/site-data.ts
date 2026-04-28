@@ -63,7 +63,7 @@ export const services = [
   },
   {
     title: "Limpieza y Mantención de Piscinas",
-    image: "/images/mantencion-piscina.webp",
+    image: "/images/mantencion2.webp",
     description:
       "Mantenemos tu piscina impecable y cristalina todo el año con un servicio técnico integral a domicilio en Santiago.",
     points: [
