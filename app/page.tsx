@@ -157,7 +157,6 @@ export default function Home() {
             fill
             priority
             fetchPriority="high"
-            quality={68}
             sizes="100vw"
             className="object-cover object-[63%_center] sm:object-[58%_center] md:object-center"
           />
@@ -182,7 +181,7 @@ export default function Home() {
                 <span className="marker-highlight">brille todo el año.</span>
               </h1>
               <p className="mt-5 max-w-[36rem] text-base font-extrabold leading-7 text-[#102a36] sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
-                Nosotros nos encargamos para que tu solo disfrutes.
+                Nosotros nos encargamos del revestimiento y la mantención, para que tu solo te dediques a disfrutar (piscinas cristalinas e impecables listas para usar)
               </p>
               <div className="mt-10 flex w-fit items-center gap-3 rounded-2xl bg-white/72 px-4 py-2 text-xs font-black leading-6 text-[#102a36] backdrop-blur-md sm:text-base">
                 <SealCheck
@@ -191,7 +190,7 @@ export default function Home() {
                   weight="fill"
                   aria-hidden
                 />
-                <span>Piscinas cristalinas e impecables listas para usar.</span>
+                <span>Tu tranquilidad es nuestro compromiso</span>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -338,15 +337,32 @@ export default function Home() {
                     key={service.title}
                     className="overflow-hidden rounded-[1.75rem] border border-[#d5e4f7] bg-[#f3f8ff] shadow-[0_24px_80px_-64px_rgba(75,133,226,0.5)]"
                   >
-                    <div className="relative aspect-[16/11] sm:aspect-[4/3]">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        sizes="(min-width: 1024px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
+                    {service.images ? (
+                      <div className="grid aspect-[16/11] grid-cols-2 gap-1 overflow-hidden bg-[#d5e4f7] sm:aspect-[4/3]">
+                        {service.images.map((image) => (
+                          <div key={image.src} className="h-full min-h-0">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={760}
+                              height={520}
+                              sizes="(min-width: 1024px) 25vw, 50vw"
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="relative aspect-[16/11] sm:aspect-[4/3]">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="(min-width: 1024px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                     <div className="p-5 sm:p-6 md:p-8">
                       <p className="text-xs font-black uppercase tracking-[0.2em] text-[#4b85e2] sm:text-sm">
                         {serviceLabels[index] ?? "Servicio"}
@@ -525,7 +541,7 @@ export default function Home() {
             </div>
             <div className="relative min-h-[24rem] overflow-hidden bg-[#4b85e2] sm:min-h-[34rem] lg:min-h-full">
               <Image
-                src="/images/contact.png"
+                src="/images/contact.webp"
                 alt="Técnico de limpieza de piscinas listo para atender una cotización"
                 fill
                 sizes="(min-width: 1024px) 52vw, 100vw"

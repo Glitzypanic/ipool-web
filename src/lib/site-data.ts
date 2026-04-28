@@ -88,7 +88,25 @@ export const services = [
   },
   {
     title: "Servicios adicionales",
-    image: "/images/ipool-hero.webp",
+    image: "/images/services/mosaico.webp",
+    images: [
+      {
+        src: "/images/services/mosaico.webp",
+        alt: "Instalación de mosaicos para piscina",
+      },
+      {
+        src: "/images/services/escalera.webp",
+        alt: "Instalación de escalera para piscina",
+      },
+      {
+        src: "/images/services/filtro.webp",
+        alt: "Cambio de cuarzo para filtro de piscina",
+      },
+      {
+        src: "/images/services/foco.webp",
+        alt: "Cambio de foco subacuático para piscina",
+      },
+    ],
     description:
       "Resolvemos trabajos complementarios para mejorar la seguridad, iluminación y terminación general de tu piscina.",
     points: [
