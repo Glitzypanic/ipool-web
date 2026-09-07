@@ -50,11 +50,3 @@ El contenido se reorganiza en pantallas pequeñas, con navegación móvil y boto
 5. **Proyectos:** enseñar intervenciones mediante imágenes y comparativas.
 6. **Preguntas frecuentes:** aclarar dudas antes de cotizar.
 7. **Contacto:** reunir los canales de atención y facilitar el siguiente paso.
-
-## Criterio para futuras mejoras
-
-Conservar una comunicación cercana, fotografías relevantes y un camino claro hacia el contacto. Al ampliar el contenido, priorizar nuevos proyectos documentados, respuestas a dudas habituales y testimonios verificables, manteniendo una lectura sencilla.
-
-## Más sobre el diseño
-
-El [informe de diseño](informe-diseno-ipool.md) recoge la propuesta inicial y sus fundamentos. Este README resume esa dirección e incorpora las secciones y servicios presentes en la versión actual.
